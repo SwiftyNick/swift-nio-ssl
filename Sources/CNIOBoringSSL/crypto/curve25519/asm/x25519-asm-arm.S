@@ -53,8 +53,10 @@ mov r0,r0
 mov r1,r1
 mov r2,r2
 add r3,sp,#32
-ldr r4,=0
-ldr r5,=254
+/*ldr r4,=0*/
+mov r4,#0 /* Avoid PC-relative fix up error */
+/*ldr r5,=254*/
+mov r5,#254 /* Avoid PC-relative fix up error */
 vmov.i32 q0,#1
 vshr.u64 q1,q0,#7
 vshr.u64 q0,q0,#8
@@ -72,7 +74,8 @@ vst1.8 {d4-d5},[r6,: 128]!
 vst1.8 {d4-d5},[r6,: 128]!
 vst1.8 d4,[r6,: 64]
 add r6,r3,#0
-ldr r7,=960
+/*ldr r7,=960*/
+mov r7,#960 /* Avoid PC-relative fix up error */
 sub r7,r7,#2
 neg r7,r7
 sub r7,r7,r7,LSL #7
