@@ -1,3 +1,5 @@
+#define __APPLE__
+
 #define BORINGSSL_PREFIX CNIOBoringSSL
 #if defined(__arm__) && defined(__linux__)
 // This file is generated from a similarly-named Perl script in the BoringSSL
